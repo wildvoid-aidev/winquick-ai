@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build
+build/
+dist/
+*.spec
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Logo source
+make-this-logo-professional-with-combo-c_*.jpg
+
+# Website download (too large for git)
+winquick-website/download/WinQuickAI.exe

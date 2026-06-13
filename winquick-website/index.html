@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WinQuick AI — AI at your fingertips</title>
+  <meta name="description" content="Lightweight Windows desktop app. Select text anywhere, press Ctrl+Shift+Z, get AI results instantly. Free, no sign-up required." />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="stars"></div>
+  <div class="glow-sphere glow-1"></div>
+  <div class="glow-sphere glow-2"></div>
+
+  <nav class="navbar glass">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo-white.png" alt="WinQuick AI" class="nav-logo-img" />
+        <span>WinQuick <span class="neon-text">AI</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how">How It Works</a>
+        <a href="#download" class="btn-nav">Download</a>
+        <a href="#donate" class="btn-donate">♥ Support</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-badge glass">
+        <span class="pulse-dot"></span> v2.1 — Windows 10 / 11
+      </div>
+      <h1 class="hero-title">
+        AI at your<br />
+        <span class="gradient-text">fingertips.</span>
+      </h1>
+      <p class="hero-sub">
+        Select text anywhere in Windows → press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>
+        → get AI results instantly. No browser, no copy-paste, no sign-up.
+      </p>
+      <div class="hero-actions">
+        <a href="#download" class="btn-primary glass glow">
+          <span class="btn-icon">⬇</span> Download Free
+        </a>
+        <a href="#features" class="btn-secondary glass">See Features</a>
+      </div>
+      <p class="hero-stats">
+        <span>⚡ 32.9 MB</span>
+        <span>🔒 No cloud server</span>
+        <span>♥ Free + Donation</span>
+      </p>
+    </section>
+
+    <section class="features" id="features">
+      <div class="section-label glass">Features</div>
+      <h2 class="section-title">6 Powerful AI Actions<br /><span class="gradient-text">One Click Away</span></h2>
+      <p class="section-sub">Works in any app — Chrome, VS Code, Notepad, WhatsApp, Word, and more.</p>
+      <div class="features-grid">
+        <div class="feature-card glass" style="--accent:#00f0ff">
+          <div class="feature-icon" style="background:rgba(0,240,255,0.1)">📝</div>
+          <h3>Summarize</h3>
+          <p>Condense long articles, docs, or emails into 3-5 crisp bullet points.</p>
+        </div>
+        <div class="feature-card glass" style="--accent:#7c3aed">
+          <div class="feature-icon" style="background:rgba(124,58,237,0.1)">💼</div>
+          <h3>Make Professional</h3>
+          <p>Rewrite casual or rough text into a polished, professional tone instantly.</p>
+        </div>
+        <div class="feature-card glass" style="--accent:#ff00ff">
+          <div class="feature-icon" style="background:rgba(255,0,255,0.1)">✂️</div>
+          <h3>Shorten</h3>
+          <p>Get straight to the point. Shrink your text while keeping the core meaning.</p>
+        </div>
+        <div class="feature-card glass" style="--accent:#00f0ff">
+          <div class="feature-icon" style="background:rgba(0,240,255,0.1)">📖</div>
+          <h3>Expand</h3>
+          <p>Add depth, examples, and detail to short notes or ideas.</p>
+        </div>
+        <div class="feature-card glass" style="--accent:#7c3aed">
+          <div class="feature-icon" style="background:rgba(124,58,237,0.1)">💬</div>
+          <h3>Generate Reply</h3>
+          <p>Turn a message into a polite, contextual response — perfect for emails & chats.</p>
+        </div>
+        <div class="feature-card glass" style="--accent:#ff00ff">
+          <div class="feature-icon" style="background:rgba(255,0,255,0.1)">🔍</div>
+          <h3>Explain</h3>
+          <p>Break down complex concepts into simple, easy-to-understand language.</p>
+        </div>
+      </div>
+      <div class="extra-features glass">
+        <div class="extra-item">💬 <strong>Free Chat</strong> — Ask AI anything, like a personal assistant</div>
+        <div class="extra-item">📋 <strong>Clipboard History</strong> — Auto-saves everything you copy for 30 days</div>
+        <div class="extra-item">🔌 <strong>Any AI API</strong> — Use Gemini, OpenAI, or Claude (bring your own key)</div>
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <div class="section-label glass">How It Works</div>
+      <h2 class="section-title">Three Simple Steps</h2>
+      <div class="steps">
+        <div class="step glass">
+          <div class="step-number">1</div>
+          <img src="assets/step-select.svg" alt="" class="step-illus" />
+          <h3>Select Text</h3>
+          <p>Highlight any text in any Windows app — browser, editor, chat, document.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step glass">
+          <div class="step-number">2</div>
+          <img src="assets/step-hotkey.svg" alt="" class="step-illus" />
+          <h3>Press Ctrl+Shift+Z</h3>
+          <p>Your global hotkey. Works everywhere, no configuration needed.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step glass">
+          <div class="step-number">3</div>
+          <img src="assets/step-result.svg" alt="" class="step-illus" />
+          <h3>Get AI Result</h3>
+          <p>Choose an action or just chat. Copy the result and paste anywhere.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot" id="screenshot">
+      <div class="section-label glass">Preview</div>
+      <h2 class="section-title">See It In Action</h2>
+      <div class="screenshot-frame glass">
+        <div class="screenshot-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="screenshot-placeholder">
+          <span class="screenshot-icon">🖥️</span>
+          <p>App screenshot coming soon</p>
+          <p class="screenshot-hint">Launch the app to see it live!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="download" id="download">
+      <div class="section-label glass">Get Started</div>
+      <h2 class="section-title">Download <span class="gradient-text">WinQuick AI</span></h2>
+      <p class="section-sub">Free for everyone. No sign-up, no account, no hidden fees.</p>
+      <div class="download-card glass">
+        <div class="download-info">
+          <div class="download-icon">⬇</div>
+          <div>
+            <h3>WinQuickAI.exe</h3>
+            <p class="download-meta">Version 2.1  •  32.9 MB  •  Windows 10 / 11 (64-bit)</p>
+          </div>
+        </div>
+        <a href="download/WinQuickAI.exe" class="btn-primary glass glow download-btn" download>
+          <span class="btn-icon">⬇</span> Download Now
+        </a>
+      </div>
+      <div class="download-features glass">
+        <span>✅ Runs in system tray</span>
+        <span>✅ Simple installer</span>
+        <span>✅ Lightweight (under 150MB)</span>
+        <span>✅ No sign-up required</span>
+      </div>
+    </section>
+
+    <section class="donate" id="donate">
+      <div class="section-label glass">Support</div>
+      <h2 class="section-title">♥ Keep It Free</h2>
+      <p class="section-sub">WinQuick AI is free for everyone. If it helps you, consider supporting the project.</p>
+      <div class="donate-card glass">
+        <p class="donate-text">
+          Your donation supports continued development, new features, and keeping WinQuick AI free for everyone.<br />
+          No feature is paywalled — ever.
+        </p>
+        <a href="https://your-payment-link.com" target="_blank" class="btn-donate-lg glow" id="donateBtn">
+          ♥  Donate Now
+        </a>
+        <p class="donate-hint">PayPal • UPI • Card • Crypto — whatever works for you</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer glass">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo-white.png" alt="WinQuick AI" class="footer-logo" />
+        <p>AI at your fingertips.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#donate">Donate</a>
+        <a href="https://github.com/your-username/winquick-ai" target="_blank">GitHub</a>
+      </div>
+      <div class="footer-meta">
+        <p>WinQuick AI v2.1 — Built with ♥ for Windows users</p>
+        <p>Powered by Google Gemini API</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
