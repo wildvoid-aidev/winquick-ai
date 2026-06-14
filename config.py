@@ -26,8 +26,8 @@ ACTIONS = [
 ]
 
 PROVIDERS = {
-    "gemini": {"name": "Google Gemini", "models": ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-2.0-flash", "gemini-2.0-flash-lite"], "default": "gemini-2.5-flash"},
-    "openai": {"name": "OpenAI", "models": ["gpt-4o", "gpt-4o-mini", "gpt-4", "gpt-3.5-turbo"], "default": "gpt-4o-mini"},
-    "claude": {"name": "Anthropic Claude", "models": ["claude-3-opus-20240229", "claude-3-sonnet-20240229", "claude-3-haiku-20240307"], "default": "claude-3-haiku-20240307"},
+    "gemini": {"name": "Google Gemini", "models": ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-2.0-flash", "gemini-2.0-flash-lite", "gemini-1.5-flash", "gemini-1.5-pro"], "default": "gemini-2.5-flash"},
+    "openai": {"name": "OpenAI", "models": ["gpt-4o", "gpt-4o-mini", "gpt-4-turbo", "gpt-4", "gpt-3.5-turbo", "o1", "o1-mini", "o3-mini"], "default": "gpt-4o-mini"},
+    "claude": {"name": "Anthropic Claude", "models": ["claude-3-5-sonnet-20241022", "claude-3-opus-20240229", "claude-3-sonnet-20240229", "claude-3-haiku-20240307"], "default": "claude-3-haiku-20240307"},
     "custom": {"name": "Custom (OpenAI-compatible)", "models": [], "default": ""},
 }
