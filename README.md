@@ -2,6 +2,8 @@
 
 > **AI at your fingertips.** Select any text anywhere in Windows, press `Ctrl+Shift+Z`, and get AI results instantly. No browser, no copy-paste, no sign-up.
 
+![Preview](assets/preview.PNG)
+
 Built with Python + CustomTkinter. Supports Gemini, OpenAI, and Claude — bring your own API key. Runs in your system tray, under 150MB RAM.
 
 ### 🚀 Features
