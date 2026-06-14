@@ -243,6 +243,7 @@ section{
   align-items:center;justify-content:center;gap:8px;
   color:#64748b;font-size:.9rem;
 }
+.screenshot-img{width:100%;border-radius:12px;display:block}
 .screenshot-icon{font-size:3rem}
 .screenshot-hint{font-size:.8rem;opacity:.6}
 

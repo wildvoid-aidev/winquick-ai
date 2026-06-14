@@ -1,5 +1,6 @@
 import threading
 import queue
+import ctypes
 import customtkinter as ctk
 import pystray
 from PIL import Image, ImageDraw
@@ -150,6 +151,11 @@ def _check_donation_reminder():
 
 def main():
     global app_root
+
+    _mutex = ctypes.windll.kernel32.CreateMutexW(None, False, "WinQuickAI_SingleInstance")
+    if ctypes.windll.kernel32.GetLastError() == 183:
+        ctypes.windll.kernel32.CloseHandle(_mutex)
+        return
 
     init_db()
     ctk.set_appearance_mode("dark")

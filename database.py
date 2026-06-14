@@ -1,6 +1,6 @@
 import sqlite3
 import threading
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from config import DB_PATH, CLIPBOARD_HISTORY_DAYS
 
 _local = threading.local()

@@ -12,7 +12,7 @@ Built with Python + CustomTkinter. Supports Gemini, OpenAI, and Claude — bring
 - **Any AI Provider** — Gemini, OpenAI, Claude, or custom API
 
 ### 📥 Download
-[winquick-ai.netlify.app](https://jocular-zabaione-ded2e2.netlify.app)
+[winquick.netlify.app](https://winquick.netlify.app/)
 
 ### 📄 License
 MIT — free to use, modify, and share.
