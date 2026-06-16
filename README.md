@@ -14,7 +14,7 @@ Built with Python + CustomTkinter. Supports Gemini, OpenAI, and Claude — bring
 - **Any AI Provider** — Gemini, OpenAI, Claude, or custom API
 
 ### 📥 Download
-[winquick.netlify.app](https://winquick.netlify.app/)
+[winquick.netlify.app](https://wildvoid-aidev.github.io/winquick-ai/)
 
 ### 📄 License
 MIT — free to use, modify, and share.
