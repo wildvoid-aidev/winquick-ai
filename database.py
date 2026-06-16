@@ -101,10 +101,22 @@ def mark_donated():
     set_setting("donated", "true")
 
 def get_donation_url():
-    return get_setting("donation_url", "https://your-payment-link.com")
+    return get_setting("donation_url", "https://upi.pe/dinesh.gendle@ybl")
 
 def set_donation_url(url):
     set_setting("donation_url", url)
+
+def get_upi_id():
+    return get_setting("upi_id", "dinesh.gendle@ybl")
+
+def set_upi_id(upi_id):
+    set_setting("upi_id", upi_id)
+
+def get_international_url():
+    return get_setting("international_url", "")
+
+def set_international_url(url):
+    set_setting("international_url", url)
 
 def get_last_donation_reminder():
     val = get_setting("last_donation_reminder", "0")

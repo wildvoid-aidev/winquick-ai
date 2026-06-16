@@ -2,8 +2,9 @@ import os
 from pathlib import Path
 
 APP_NAME = "WinQuick AI"
-APP_VERSION = "2.1.0"
-DONATION_URL = "https://your-payment-link.com"  # User can change in Settings
+APP_VERSION = "2.1.1"
+DONATION_URL = "https://upi.pe/dinesh.gendle@ybl"
+UPI_ID = "dinesh.gendle@ybl"
 
 APPDATA_DIR = Path(os.environ.get('LOCALAPPDATA', '.')) / APP_NAME
 DB_PATH = APPDATA_DIR / "winquick.db"
@@ -11,6 +12,7 @@ APPDATA_DIR.mkdir(parents=True, exist_ok=True)
 
 HOTKEY = "ctrl+shift+z"
 GEMINI_MODEL = "gemini-2.5-flash"
+GITHUB_REPO = "wildvoid-aidev/winquick-ai"
 GEMINI_TIMEOUT_MS = 60000
 CLIPBOARD_MONITOR_INTERVAL = 3
 CLIPBOARD_HISTORY_DAYS = 30

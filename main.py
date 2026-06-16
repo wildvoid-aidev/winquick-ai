@@ -9,6 +9,7 @@ from database import init_db, get_setting, has_donated, get_launch_count, increm
 from utils import start_hotkey_listener, stop_hotkey_listener, capture_selected_text, start_clipboard_monitor, stop_clipboard_monitor
 from ai_actions import chat
 from ui import PopupWindow, SettingsWindow, HistoryWindow, ClipboardHistoryWindow, DonationWindow
+from updater import check_update
 
 event_queue = queue.Queue()
 tray_icon = None
@@ -23,8 +24,7 @@ def create_tray_image():
     return img
 
 def on_hotkey():
-    text = capture_selected_text()
-    event_queue.put(("show_popup", text))
+    event_queue.put(("show_popup", ""))
 
 def tray_show(_icon, _item):
     event_queue.put(("show_popup_from_tray", None))
@@ -78,6 +78,17 @@ def _handle_chat(message):
     model = get_setting("model", "gemini-2.5-flash")
     return chat(api_key, message, model, provider)
 
+def _on_update_available(version, url):
+    if version:
+        event_queue.put(("update_available", (version, url)))
+
+def _on_popup_closed():
+    global _process_active_popup
+    _process_active_popup = None
+
+def _on_quit_app():
+    event_queue.put(("quit", None))
+
 def process_events():
     global _process_active_popup, app_root
     try:
@@ -85,23 +96,20 @@ def process_events():
             evt, data = event_queue.get_nowait()
 
             if evt == "show_popup":
-                if _process_active_popup is not None:
-                    try:
-                        _process_active_popup.close()
-                    except Exception:
-                        pass
-                popup = PopupWindow(data, _handle_action, _handle_chat)
-                _process_active_popup = popup
+                text = capture_selected_text() or ""
+                if _process_active_popup is not None and not _process_active_popup._closed:
+                    _process_active_popup.update_input(text)
+                else:
+                    popup = PopupWindow(text, _handle_action, _handle_chat, on_close=_on_popup_closed, on_quit=_on_quit_app)
+                    _process_active_popup = popup
 
             elif evt == "show_popup_from_tray":
-                text = capture_selected_text()
-                if _process_active_popup is not None:
-                    try:
-                        _process_active_popup.close()
-                    except Exception:
-                        pass
-                popup = PopupWindow(text, _handle_action, _handle_chat)
-                _process_active_popup = popup
+                text = capture_selected_text() or ""
+                if _process_active_popup is not None and not _process_active_popup._closed:
+                    _process_active_popup.update_input(text)
+                else:
+                    popup = PopupWindow(text, _handle_action, _handle_chat, on_close=_on_popup_closed, on_quit=_on_quit_app)
+                    _process_active_popup = popup
 
             elif evt == "show_settings":
                 SettingsWindow()
@@ -114,6 +122,11 @@ def process_events():
 
             elif evt == "show_donation":
                 DonationWindow()
+
+            elif evt == "update_available":
+                version, url = data
+                from ui import UpdateWindow
+                UpdateWindow(version, url)
 
             elif evt == "quit":
                 stop_hotkey_listener()
@@ -166,6 +179,7 @@ def main():
 
     app_root.after(500, check_first_launch)
     app_root.after(1000, start_clipboard_monitor)
+    app_root.after(3000, lambda: check_update(_on_update_available))
 
     tray_thread = threading.Thread(target=run_tray, daemon=True)
     tray_thread.start()
